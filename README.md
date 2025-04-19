@@ -36,6 +36,11 @@ URL: [http://etcm.ticollege.org/cms](http://etcm.ticollege.org/cms)
 
 ---
 
+## 🔧 Requirments 
+**open terminal and paste the following**
+**pip install selenium pandas requests python-dotenv pyinstaller**
+
+
 # 🔧 Set your App Password
 
 ## 🔐 Step-by-Step: How to Get a Gmail App Password
