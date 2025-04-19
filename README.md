@@ -38,6 +38,7 @@ URL: [http://etcm.ticollege.org/cms](http://etcm.ticollege.org/cms)
 
 ## 🔧 Requirments 
 **open terminal and paste the following**
+
 **pip install selenium pandas requests python-dotenv pyinstaller**
 
 
