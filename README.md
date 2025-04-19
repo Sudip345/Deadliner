@@ -86,3 +86,8 @@ Click Generate
 ---
 ### ✅ Now You Are All Set 
 
+
+### Wait 
+---
+### I will upload a VBS file and explain the process to run this file automatically whenever you turn on your computer.
+
