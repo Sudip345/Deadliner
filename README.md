@@ -1,4 +1,4 @@
-# 📚 Techno Main Assignment Tracker
+# 📚  Assignment Tracker (For Techno Main Only)
 
 Automated Python script to check and notify students of **pending** or **overdue assignments** from the official Techno Main Salt Lake College portal.
 
