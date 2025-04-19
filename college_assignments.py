@@ -15,7 +15,7 @@ import smtplib
 from dotenv import load_dotenv
 import os
 
-
+load_dotenv()
 
 over_due_count = 0
 content  = ""
