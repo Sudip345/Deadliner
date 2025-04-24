@@ -33,6 +33,6 @@ while formatted_date:
         delay = qtime_seconds - current_seconds
         time.sleep(delay)
         try:
-            subprocess.run(["pythonw", f"{os.getenv('ABS_PATH')}\\college_assignments"], check=True)
+            subprocess.run(["pythonw", f"{os.getenv('ABS_PATH')}\\college_assignments.py"], check=True)
         except Exception as ex:
             pass
