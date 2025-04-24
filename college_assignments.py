@@ -15,7 +15,7 @@ import smtplib
 from dotenv import load_dotenv
 import os
 
-
+load_dotenv()
 
 over_due_count = 0
 content  = ""
@@ -35,7 +35,6 @@ def check_connection(url):
         return False
 
 def send_mail(mail_subject="Assignments",mail_content=None,receiver=os.getenv('RECEIVER_EMAIL')):       # REPLACE UR RECEIVER EMAIL ID IN THE ENV FILE TO RECEIVE MAILS
-
     try:
                 server = smtplib.SMTP('smtp.gmail.com', 587)
                 server.starttls()
@@ -46,13 +45,14 @@ def send_mail(mail_subject="Assignments",mail_content=None,receiver=os.getenv('R
                 server.sendmail(sender_email, receiver, msg)
                 return True
     except Exception as ex:
+                print("error : ",ex)
                 return False
 
 
 def fetch_content():
     global content
     global over_due_count
-    df = pd.read_csv("assignments.csv")
+    df = pd.read_csv(f"{os.getenv('ABS_PATH')}\\assignments.csv")
     for index, row in df.iterrows():
         submitted = row['Submitted']
         over_due = row['Over Due']
@@ -64,7 +64,7 @@ def fetch_content():
 
 
 def create_file():
-    with open("assignments.csv",'w') as fd:
+    with open(f"{os.getenv('ABS_PATH')}\\assignments.csv",'w') as fd:
         fd.write("Assignment Name,Over Due,Date,Submitted\n")
 
 
@@ -78,10 +78,10 @@ def write_into_file(text,over_due,date,submitted):
         'Date': date,
         'Submitted': submitted
     }]
-    pd.DataFrame(new_data).to_csv("assignments.csv",mode='a',header=False,index=False)
-    df = pd.read_csv("assignments.csv")
+    pd.DataFrame(new_data).to_csv(f"{os.getenv('ABS_PATH')}\\assignments.csv",mode='a',header=False,index=False)
+    df = pd.read_csv(f"{os.getenv('ABS_PATH')}\\assignments.csv")
     df.dropna(subset=['Date'], inplace=True)
-    df.to_csv("assignments.csv", index=False)
+    df.to_csv(f"{os.getenv('ABS_PATH')}\\assignments.csv", index=False)
 
 def find_date(text = None):
     try:
@@ -189,7 +189,7 @@ if __name__  == "__main__":
             make_beep()
             exit(0)
 
-        load_dotenv()
+   
 
         driver = webdriver.Chrome()
         driver.maximize_window()
@@ -230,8 +230,7 @@ if __name__  == "__main__":
         if content == "":
             content =f"You have 0 due assignments and {over_due_count} overdue assignments\n"
         else:
-            content +=f"""\n submit these assignments asap.
-                             You have {over_due_count} overdue assignments\n"""
+            content +=f"""\nsubmit these assignments asap.\nYou have {over_due_count} overdue assignments\n"""
         send_mail(mail_content=content)
 
         driver.quit()
