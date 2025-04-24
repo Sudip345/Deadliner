@@ -13,7 +13,7 @@ Automated Python script to check and notify students of **pending** or **overdue
 ✅ Alerts you with a **beep** if you're offline  
 ✅ Smartly filters out already submitted tasks  
 ✅ Fully automated & customizable
-
+## There are predefined times in the env file you can change them as well , but the format must be the same  (24 hour).
 ---
 
 ## 🏫 Made for
@@ -82,12 +82,16 @@ Click Generate
 **APP_PASSWORD = "abcd efgh ijkl mnop"**
 
 ---
-### Set your other creditnals in the env file 
+### Set your other creditnals in the env file
+**Don't forget to change the folder path with your folder path (where you are downloading this repo)**
+---
+
+## VBS ??
+👉 for full automation . why to run it everytime ? just open your system and let it check itself .
+just replace your folder path (where you have downloaded this repo) with the path mentioned in the **vbs** file.
+
 ---
 ### ✅ Now You Are All Set 
 
 
-### Wait 
----
-### I will upload a VBS file and explain the process to run this file automatically whenever you turn on your computer.
 
