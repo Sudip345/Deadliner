@@ -91,6 +91,16 @@ Click Generate
 just replace your folder path (where you have downloaded this repo) with the path mentioned in the **vbs** file.
 
 ---
+
+# Finally 
+**For windows**
+press Win+R to open Run dialog box , enter "shell:startup" and paste the vbs file there .
+Now whenever you open your system it it will automatically open your portal at your preferred time and check for due assignments
+
+**Don't worry the program is light-weight and will not take much resources**
+
+---
+
 ### ✅ Now You Are All Set 
 
 
